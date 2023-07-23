@@ -1,0 +1,41 @@
+.form-control {
+  width: 100%;
+  margin-top: 4em;
+}
+
+.textarea {
+  font-size: 0.875rem;
+  font-weight: 400;
+  line-height: 1.5;
+  padding: 12px;
+  border-radius: 12px 12px 0 12px;
+  color: #24292F;
+  background: #FFFFFF;
+  border: 1px solid #D0D7DE;
+  box-shadow: 0px 2px 2px #F6F8FA;
+}
+
+.button {
+  margin-top: 4em;
+  margin-bottom: 1em;
+  font-size: 0.875rem;
+  line-height: 1.5;
+  background-color: #007FFF;
+  color: white;
+  border-radius: 8px;
+  font-weight: 600;
+  padding: 8px 16px;
+  cursor: pointer;
+  transition: all 150ms ease;
+  border: none;
+}
+
+.recaptcha-disclosure {
+  text-align: end;
+  margin-top: 0.5em;
+  color: #a9a9a9;
+}
+
+.recaptcha-disclosure-link {
+  color: #1976D280;
+}

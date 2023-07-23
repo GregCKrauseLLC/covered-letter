@@ -1,0 +1,24 @@
+.responsive-drawer {
+  display: flex;
+}
+
+.main > * {
+  --drawer-width: 240;
+  --drawer-width-px: 240px;
+}
+
+.menu-link {
+  width: 100%;
+}
+
+.auth-button {
+  position: absolute;
+  bottom: 0;
+  left: 50%;
+  transform: translateX(-50%);
+}
+
+.main {
+  flex-grow: 1;
+  padding: 2em;
+}
