@@ -53,10 +53,12 @@ export default function CoverLetterGenerator() {
             alert(
               `There was a problem processing your request. ${json.error}.`
             );
+            setStep("input");
           } else {
             alert(
               "There was a problem processing your request. Please try again later."
             );
+            setStep("input");
           }
         });
       })
@@ -64,6 +66,7 @@ export default function CoverLetterGenerator() {
         alert(
           "There was a problem processing your request. Please try again later."
         );
+        setStep("input");
       });
   };
 
@@ -132,9 +135,16 @@ export default function CoverLetterGenerator() {
                 setJobDescription((e.target as HTMLElement).value);
               }}
             />
-            <Button className={styles.button} type="submit">
+            <Button className={`${styles["button"]} ${styles["button-primary"]}`} type="submit">
               Submit
             </Button>
+            {coverLetter
+              ? (
+                <Button className={`${styles["button"]} ${styles["button-secondary"]}`} onClick={() => {setStep('review')}}>
+                  See Last Cover Letter
+                </Button>
+              ) : (<></>)
+            }
             <Typography
               variant="caption"
               component="div"
@@ -170,7 +180,7 @@ export default function CoverLetterGenerator() {
               readOnly
             />
             <Button
-              className={styles.button}
+              className={`${styles.button} ${styles["button-primary"]}`}
               onClick={() => {
                 setStep("input");
               }}
