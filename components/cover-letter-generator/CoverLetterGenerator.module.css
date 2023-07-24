@@ -9,10 +9,10 @@
   line-height: 1.5;
   padding: 12px;
   border-radius: 12px 12px 0 12px;
-  color: #24292F;
-  background: #FFFFFF;
-  border: 1px solid #D0D7DE;
-  box-shadow: 0px 2px 2px #F6F8FA;
+  color: #24292f;
+  background: #ffffff;
+  border: 1px solid #d0d7de;
+  box-shadow: 0px 2px 2px #f6f8fa;
 }
 
 .button {
@@ -20,7 +20,7 @@
   margin-bottom: 1em;
   font-size: 0.875rem;
   line-height: 1.5;
-  background-color: #007FFF;
+  background-color: #007fff;
   color: white;
   border-radius: 8px;
   font-weight: 600;
@@ -30,6 +30,12 @@
   border: none;
 }
 
+.loading-gif-wrapper {
+  width: 100%;
+  text-align: center;
+  margin-top: 4em;
+}
+
 .recaptcha-disclosure {
   text-align: end;
   margin-top: 0.5em;
@@ -37,5 +43,5 @@
 }
 
 .recaptcha-disclosure-link {
-  color: #1976D280;
+  color: #1976d280;
 }
