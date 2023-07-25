@@ -135,16 +135,24 @@ export default function CoverLetterGenerator() {
                 setJobDescription(e.target.value);
               }}
             />
-            <Button className={`${styles["button"]} ${styles["button-primary"]}`} type="submit">
+            <Button
+              className={`${styles["button"]} ${styles["button-primary"]}`}
+              type="submit"
+            >
               Submit
             </Button>
-            {coverLetter
-              ? (
-                <Button className={`${styles["button"]} ${styles["button-secondary"]}`} onClick={() => {setStep('review')}}>
-                  See Last Cover Letter
-                </Button>
-              ) : (<></>)
-            }
+            {coverLetter ? (
+              <Button
+                className={`${styles["button"]} ${styles["button-secondary"]}`}
+                onClick={() => {
+                  setStep("review");
+                }}
+              >
+                See Last Cover Letter
+              </Button>
+            ) : (
+              <></>
+            )}
             <Typography
               variant="caption"
               component="div"
