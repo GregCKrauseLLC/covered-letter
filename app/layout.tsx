@@ -10,7 +10,7 @@ const roboto = Roboto({
 });
 
 export const metadata: Metadata = {
-  title: "CoveredLetter",
+  title: "Covered Letter",
   description:
     "An AI-driven tool to help you get a quick start on your next cover letter.",
 };
