@@ -118,7 +118,7 @@ export default function CoverLetterGenerator() {
               placeholder="Critical thinking, time management, communication..."
               value={skills}
               onChange={(e) => {
-                setSkills((e.target as HTMLElement).value);
+                setSkills(e.target.value);
               }}
             />
           </FormControl>
@@ -132,7 +132,7 @@ export default function CoverLetterGenerator() {
               placeholder="We are looking for a skilled worker who..."
               value={jobDescription}
               onChange={(e) => {
-                setJobDescription((e.target as HTMLElement).value);
+                setJobDescription(e.target.value);
               }}
             />
             <Button className={`${styles["button"]} ${styles["button-primary"]}`} type="submit">

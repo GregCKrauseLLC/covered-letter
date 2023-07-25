@@ -1,4 +1,4 @@
-# CoveredLetter
+# Covered Letter
 
 This Next.js app enables users to generate cover letters using OpenAI.
 

@@ -101,7 +101,7 @@ export default function ResponsiveDrawer({
             <MenuIcon />
           </IconButton>
           <Typography variant="h6" noWrap component="div">
-            CoveredLetter
+            Covered Letter
           </Typography>
         </Toolbar>
       </AppBar>
