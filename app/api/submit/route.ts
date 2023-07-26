@@ -89,7 +89,7 @@ export async function POST(request: Request) {
       const recaptchaJSON = await recaptchaResponse.json();
 
       if (recaptchaJSON.success) {
-        if (recaptchaJSON.score >= 0.85) {
+        if (recaptchaJSON.score >= 0.5) {
           try {
             const openAIConfiguration = new Configuration({
               apiKey: OPEN_AI_API_KEY,

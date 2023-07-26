@@ -21,6 +21,7 @@ export default function CoverLetterGenerator() {
   const [jobDescription, setJobDescription] = useState("");
   const [coverLetter, setCoverLetter] = useState("");
   const [step, setStep] = useState("input"); // ['input', 'loading', 'review']
+  const [errorMessage, setErrorMessage] = useState("");
 
   const handleRecaptchaResponse = (recaptchaToken: string) => {
     setStep("loading");
@@ -44,28 +45,22 @@ export default function CoverLetterGenerator() {
               setCoverLetter(json.coverLetter.content);
               setStep("review");
             } else {
-              alert(
-                "There was a problem processing your request. Please try again later."
-              );
+              setErrorMessage("There was a problem processing your request. Please try again later.")
               setStep("input");
             }
           } else if (json.error) {
-            alert(
-              `There was a problem processing your request. ${json.error}.`
-            );
+            setErrorMessage(`There was a problem processing your request. ${json.error}.`)
             setStep("input");
           } else {
-            alert(
-              "There was a problem processing your request. Please try again later."
-            );
+            setErrorMessage("There was a problem processing your request. Please try again later.")
             setStep("input");
           }
+        }).catch((_err) => {
+          setErrorMessage("There was a problem processing your request. Please try again later.");
+          setStep("input");
         });
-      })
-      .catch((_err) => {
-        alert(
-          "There was a problem processing your request. Please try again later."
-        );
+      }).catch((_err) => {
+        setErrorMessage("There was a problem processing your request. Please try again later.");
         setStep("input");
       });
   };
@@ -91,6 +86,7 @@ export default function CoverLetterGenerator() {
           autoComplete="off"
           onSubmit={(e) => {
             e.preventDefault();
+            setErrorMessage("");
             recaptchaRef.current!.execute();
           }}
         >
@@ -102,10 +98,11 @@ export default function CoverLetterGenerator() {
               if (token) {
                 handleRecaptchaResponse(token);
               } else {
-                alert(
-                  "There was a problem processing your request. Please try again later."
-                );
+                setErrorMessage("There was a problem processing your request. Please try again later.")
               }
+            }}
+            onErrored={() => {
+              setErrorMessage("There was a problem processing your request. Please try again later.")
             }}
           />
           <FormControl className={styles["form-control"]}>
@@ -135,6 +132,17 @@ export default function CoverLetterGenerator() {
                 setJobDescription(e.target.value);
               }}
             />
+            {errorMessage
+              ? (
+                <Typography
+                  variant="body2"
+                  component="div"
+                  className={styles["error-message"]}
+                >
+                  {errorMessage}
+                </Typography>
+              ) : (<></>)
+            }
             <Button
               className={`${styles["button"]} ${styles["button-primary"]}`}
               type="submit"

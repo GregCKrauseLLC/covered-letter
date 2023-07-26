@@ -52,3 +52,8 @@
 .recaptcha-disclosure-link {
   color: #1976d280;
 }
+
+.error-message {
+  margin-top: 1em;
+  color: #FF9494;
+}
