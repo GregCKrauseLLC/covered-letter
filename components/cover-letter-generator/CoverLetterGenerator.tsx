@@ -20,7 +20,7 @@ export default function CoverLetterGenerator() {
   const [skills, setSkills] = useState("");
   const [jobDescription, setJobDescription] = useState("");
   const [coverLetter, setCoverLetter] = useState("");
-  const [step, setStep] = useState("input"); // ['input', 'loading', 'review']
+  const [step, setStep] = useState("loading"); // ['input', 'loading', 'review']
 
   const handleRecaptchaResponse = (recaptchaToken: string) => {
     setStep("loading");
@@ -80,8 +80,8 @@ export default function CoverLetterGenerator() {
           <Image
             src="/loading.gif"
             alt="loading GIF"
-            height={291}
-            width={441}
+            height={145}
+            width={220}
           />
         </div>
       ) : step === "input" ? (
