@@ -1,5 +1,4 @@
-// Prevents cache attempts
-// Useful during Docker builds where running access to running DB may be limited
+// We don't want to statically build this page or cache the results
 export const dynamic = "force-dynamic";
 
 // Third party
